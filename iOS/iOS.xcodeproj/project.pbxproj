@@ -14,8 +14,8 @@
 		0A9AB41C24D40E8B001A0FE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9AB41B24D40E8B001A0FE0 /* Assets.xcassets */; };
 		0A9AB41F24D40E8B001A0FE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9AB41E24D40E8B001A0FE0 /* Preview Assets.xcassets */; };
 		0A9AB42224D40E8B001A0FE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9AB42024D40E8B001A0FE0 /* LaunchScreen.storyboard */; };
-		0A9AB43924D40E9E001A0FE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9AB43824D40E9E001A0FE0 /* Preview Assets.xcassets */; };
 		0A9AB44124D40E9E001A0FE0 /* 200731_AppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 0A9AB42D24D40E9D001A0FE0 /* 200731_AppClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0AA887C524F8D9F500B8FA25 /* 200828_dSYM_000.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AA887C424F8D9F500B8FA25 /* 200828_dSYM_000.png */; };
 		1D5EEBE224D6782400CFBD21 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5EEBE124D6782400CFBD21 /* Product.swift */; };
 		1D5EEBE324D6782400CFBD21 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5EEBE124D6782400CFBD21 /* Product.swift */; };
 		1D5EEBE424D67D9C00CFBD21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9AB41B24D40E8B001A0FE0 /* Assets.xcassets */; };
@@ -60,6 +60,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A8754D024F8D48E0072E955 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0A8A348F24D4222900F34A82 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0A9AB41224D40E8A001A0FE0 /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A9AB41524D40E8A001A0FE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,9 +71,10 @@
 		0A9AB42124D40E8B001A0FE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A9AB42324D40E8B001A0FE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A9AB42D24D40E9D001A0FE0 /* 200731_AppClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 200731_AppClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A9AB43824D40E9E001A0FE0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0A9AB43D24D40E9E001A0FE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A9AB43E24D40E9E001A0FE0 /* _00731_AppClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = _00731_AppClip.entitlements; sourceTree = "<group>"; };
+		0AA887C424F8D9F500B8FA25 /* 200828_dSYM_000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 200828_dSYM_000.png; sourceTree = "<group>"; };
+		0AA887C624F8DCD300B8FA25 /* 200828_dSYM_001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 200828_dSYM_001.png; sourceTree = "<group>"; };
 		1D5EEBD924D5DA7E00CFBD21 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		1D5EEBE124D6782400CFBD21 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		1D713E0424D68AF10038D3E1 /* configure_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = configure_1.png; sourceTree = "<group>"; };
@@ -105,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A8754CF24F8D46B0072E955 /* 200828_dSYM */ = {
+			isa = PBXGroup;
+			children = (
+				0AA887C224F8D88700B8FA25 /* image */,
+				0A8754D024F8D48E0072E955 /* README.md */,
+			);
+			path = 200828_dSYM;
+			sourceTree = "<group>";
+		};
 		0A8A349124D4231700F34A82 /* image */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +138,7 @@
 			children = (
 				0A9AB41424D40E8A001A0FE0 /* iOS */,
 				0A9AB42E24D40E9D001A0FE0 /* 200731_AppClip */,
+				0A8754CF24F8D46B0072E955 /* 200828_dSYM */,
 				0A9AB41324D40E8A001A0FE0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -171,17 +183,17 @@
 				0A8A348F24D4222900F34A82 /* README.md */,
 				0A9AB43D24D40E9E001A0FE0 /* Info.plist */,
 				0A9AB43E24D40E9E001A0FE0 /* _00731_AppClip.entitlements */,
-				0A9AB43724D40E9E001A0FE0 /* Preview Content */,
 			);
 			path = 200731_AppClip;
 			sourceTree = "<group>";
 		};
-		0A9AB43724D40E9E001A0FE0 /* Preview Content */ = {
+		0AA887C224F8D88700B8FA25 /* image */ = {
 			isa = PBXGroup;
 			children = (
-				0A9AB43824D40E9E001A0FE0 /* Preview Assets.xcassets */,
+				0AA887C624F8DCD300B8FA25 /* 200828_dSYM_001.png */,
+				0AA887C424F8D9F500B8FA25 /* 200828_dSYM_000.png */,
 			);
-			path = "Preview Content";
+			path = image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +207,7 @@
 				0A9AB40F24D40E8A001A0FE0 /* Frameworks */,
 				0A9AB41024D40E8A001A0FE0 /* Resources */,
 				0A9AB44524D40E9E001A0FE0 /* Embed App Clips */,
+				0AEFCB9924F8D91B001C0E55 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -266,6 +279,7 @@
 			files = (
 				0A9AB42224D40E8B001A0FE0 /* LaunchScreen.storyboard in Resources */,
 				0A9AB41F24D40E8B001A0FE0 /* Preview Assets.xcassets in Resources */,
+				0AA887C524F8D9F500B8FA25 /* 200828_dSYM_000.png in Resources */,
 				0A9AB41C24D40E8B001A0FE0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,7 +290,6 @@
 			files = (
 				1D713E1624D68AF10038D3E1 /* configure_2.png in Resources */,
 				1D713E1024D68AF10038D3E1 /* appclip_1.png in Resources */,
-				0A9AB43924D40E9E001A0FE0 /* Preview Assets.xcassets in Resources */,
 				1D5EEBE424D67D9C00CFBD21 /* Assets.xcassets in Resources */,
 				1D713E1224D68AF10038D3E1 /* appclip_7.jpeg in Resources */,
 				1D5EEBE824D67DA500CFBD21 /* LaunchScreen.storyboard in Resources */,
@@ -292,6 +305,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0AEFCB9924F8D91B001C0E55 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Hi Run Script\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0A9AB40E24D40E8A001A0FE0 /* Sources */ = {
