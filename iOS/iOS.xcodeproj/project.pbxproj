@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A72F0982506428500E10781 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A72F0972506428500E10781 /* main.swift */; };
 		0A8A349024D4222900F34A82 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0A8A348F24D4222900F34A82 /* README.md */; };
 		0A9AB41624D40E8A001A0FE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9AB41524D40E8A001A0FE0 /* AppDelegate.swift */; };
 		0A9AB41824D40E8A001A0FE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9AB41724D40E8A001A0FE0 /* SceneDelegate.swift */; };
@@ -46,6 +47,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0A72F0932506428500E10781 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		0A9AB44524D40E9E001A0FE0 /* Embed App Clips */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -60,6 +70,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A72F08E2506423C00E10781 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0A72F0952506428500E10781 /* 200907_method swizzling */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "200907_method swizzling"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A72F0972506428500E10781 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0A8754D024F8D48E0072E955 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0A8A348F24D4222900F34A82 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0A9AB41224D40E8A001A0FE0 /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +103,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0A72F0922506428500E10781 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0A9AB40F24D40E8A001A0FE0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -107,6 +127,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A72F0962506428500E10781 /* 200907_method swizzling */ = {
+			isa = PBXGroup;
+			children = (
+				0A72F0972506428500E10781 /* main.swift */,
+				0A72F08E2506423C00E10781 /* README.md */,
+			);
+			path = "200907_method swizzling";
+			sourceTree = "<group>";
+		};
 		0A8754CF24F8D46B0072E955 /* 200828_dSYM */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +168,7 @@
 				0A9AB41424D40E8A001A0FE0 /* iOS */,
 				0A9AB42E24D40E9D001A0FE0 /* 200731_AppClip */,
 				0A8754CF24F8D46B0072E955 /* 200828_dSYM */,
+				0A72F0962506428500E10781 /* 200907_method swizzling */,
 				0A9AB41324D40E8A001A0FE0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -148,6 +178,7 @@
 			children = (
 				0A9AB41224D40E8A001A0FE0 /* iOS.app */,
 				0A9AB42D24D40E9D001A0FE0 /* 200731_AppClip.app */,
+				0A72F0952506428500E10781 /* 200907_method swizzling */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -199,6 +230,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0A72F0942506428500E10781 /* 200907_method swizzling */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A72F0992506428500E10781 /* Build configuration list for PBXNativeTarget "200907_method swizzling" */;
+			buildPhases = (
+				0A72F0912506428500E10781 /* Sources */,
+				0A72F0922506428500E10781 /* Frameworks */,
+				0A72F0932506428500E10781 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "200907_method swizzling";
+			productName = "200907_method swizzling";
+			productReference = 0A72F0952506428500E10781 /* 200907_method swizzling */;
+			productType = "com.apple.product-type.tool";
+		};
 		0A9AB41124D40E8A001A0FE0 /* iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A9AB42624D40E8B001A0FE0 /* Build configuration list for PBXNativeTarget "iOS" */;
@@ -242,9 +290,12 @@
 		0A9AB40A24D40E8A001A0FE0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
+					0A72F0942506428500E10781 = {
+						CreatedOnToolsVersion = 11.5;
+					};
 					0A9AB41124D40E8A001A0FE0 = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -268,6 +319,7 @@
 			targets = (
 				0A9AB41124D40E8A001A0FE0 /* iOS */,
 				0A9AB42C24D40E9D001A0FE0 /* 200731_AppClip */,
+				0A72F0942506428500E10781 /* 200907_method swizzling */,
 			);
 		};
 /* End PBXProject section */
@@ -327,6 +379,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0A72F0912506428500E10781 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A72F0982506428500E10781 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0A9AB40E24D40E8A001A0FE0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -371,6 +431,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0A72F09A2506428500E10781 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HC2Z7MJWST;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		0A72F09B2506428500E10781 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HC2Z7MJWST;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		0A9AB42424D40E8B001A0FE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -422,7 +508,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -477,7 +563,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -588,6 +674,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0A72F0992506428500E10781 /* Build configuration list for PBXNativeTarget "200907_method swizzling" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A72F09A2506428500E10781 /* Debug */,
+				0A72F09B2506428500E10781 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0A9AB40D24D40E8A001A0FE0 /* Build configuration list for PBXProject "iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
