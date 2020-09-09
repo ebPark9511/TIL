@@ -60,11 +60,70 @@ iOS 환경에서 동시성 프로그래밍을 지원하는 종류는 2가지가 
 
 GCD에서 제공하는 Queue의 타입은 다음과 같다.
 
-Main Queue:  Serial Queue이며 메인 스레드 위에서 동작한다.
+- Main Queue:  Serial Queue이며 메인 스레드 위에서 동작한다.
 
-Global Queue: Concurrent Queue이며 우선 순위에 따라 4개의 Queue가 존재한다. (high, default, low, background)
+- Global Queue: Concurrent Queue이며 우선 순위에 따라 4개의 Queue가 존재한다. (high, default, low, background)
 
-Custom Queue: 커스텀으로 만드는 Queue. Serial일수도 Concurrent일수도 있지만. 모두 Global Queue에서 수행된다.
+- Custom Queue: 커스텀으로 만드는 Queue. Serial일수도 Concurrent일수도 있지만. 모두 Global Queue에서 수행된다.
 
-    
 
+---
+
+### **Global Queue의 Quality of Service Class**
+
+어떤 작업을 멀티 스레딩으로 Concurrent 하게 처리시 Global-Queue에 작업을 추가한다.
+이때 지정된 우선 순위에 따라 스케쥴링, CPU 및 I/O 처리량 타이머 대기시간으로 우선순위를 조절하게 된다.
+
+
+```swift
+
+struct DispatchQoS
+
+```
+
+
+
+
+1)  userInteractive 
+
+즉각 반응, main thread에서 동작하는 UI 변경, 애니메이션 등 작업시에 들어간다.. 앱 실행시 해당 우선 순위로 할당된 작업은 많으면 안된다.
+  _작업은 거의 순간에 실행되는 작업_
+  
+2)  userInitiated
+
+사용자가 시작하고 즉각적인 결과가 필요한 작업, 저장된 문서를 열거나. 사용자가 UI에서 무언가를 클릭할 때 부여한다. 반응성과 성능에 중점을 준다.
+  _작업은 거의 순간에 실행 되거나 몇초 혹은 그보다 빠른 작업._
+  
+3) utility
+
+즉각적 결과가 필요치 않은 작업. 데이터 다운로드, 데이터 가져오기 등시. utility는 사용자가 볼 수 있는 진행상황(프로그래스 바)을 제공한다 반응성, 성능, 에너지 효율성간 균형을 둔다.
+_작업은 몇초에서 몇분 정도 걸림._
+
+4) Background
+
+백그라운드에서 작동하며. 인덱싱, 동기화, 백업등 작업을 부여함. 에너지 효율성에 중점을 둔다. 
+_작업은 분, 시간과 같이 상당한 시간이 든다._
+
+
+ 
+ 
+ 
+
+### **Global Queue의 Special Quality of Service Class**
+
+
+기본 유형 4가지 외에 특별한 2가지의 QoS가 있다.
+
+
+1) default 
+
+  userInitiated와 utility 사이 레벨임. 개발자가 분류 하기 위한 용도는 아니다. QoS가 지정되지 않을시 default를 갖게 되고 
+  GCD Global Queue는 이 레벨에서 실행된다.
+
+2) Unspectified
+
+  QoS 정보가 없을을 시스템에게 준다. 해당 QoS 환경에서 추론 되어야 한다.
+
+
+[Dispatch Queue 테스트](https://github.com/ebPark9511/TIL/blob/master/iOS/200908_Concurrency%20Programing/main.swift) 
+ 
