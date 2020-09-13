@@ -3,7 +3,17 @@
    version = "3.0">
    <TimelineItems>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/jobkorea/TIL/leetcode/MyPlayground.playground#CharacterRangeLen=33&amp;CharacterRangeLoc=699&amp;EndingColumnNumber=0&amp;EndingLineNumber=37&amp;StartingColumnNumber=23&amp;StartingLineNumber=35&amp;Timestamp=621528926.14329"
+         documentLocation = "file:///Users/jobkorea/TIL/leetcode/155.%20Min%20Stack.playground#CharacterRangeLen=904&amp;CharacterRangeLoc=0&amp;EndingColumnNumber=0&amp;EndingLineNumber=49&amp;StartingColumnNumber=0&amp;StartingLineNumber=0&amp;Timestamp=621692531.964195"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/jobkorea/TIL/leetcode/155.%20Min%20Stack.playground#CharacterRangeLen=904&amp;CharacterRangeLoc=0&amp;EndingColumnNumber=0&amp;EndingLineNumber=49&amp;StartingColumnNumber=0&amp;StartingLineNumber=0&amp;Timestamp=621692531.9643019"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/jobkorea/TIL/leetcode/155.%20Min%20Stack.playground#CharacterRangeLen=904&amp;CharacterRangeLoc=0&amp;EndingColumnNumber=0&amp;EndingLineNumber=49&amp;StartingColumnNumber=0&amp;StartingLineNumber=0&amp;Timestamp=621692531.964381"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>

@@ -1,4 +1,5 @@
 import Foundation
+ 
 
 class MinStack {
     var stack: [Int]!
@@ -11,24 +12,27 @@ class MinStack {
     
     func push(_ x: Int) {
         stack.append(x)
-         
+          
         if minStack.isEmpty {
             minStack.append(x)
         }
         
-        if let minValue = minStack.last,
-            minValue > x {
+        if let lastVal = minStack.last,
+        lastVal >= x {
             minStack.append(x)
         }
-        
     }
      
     func pop() {
-        if let value = stack?.removeLast() {
-            if let minValue = minStack.last {
-                if minValue == value {
-                    minStack.removeLast()
-                }
+        if let lastVal = stack?.removeLast() {
+            if stack.isEmpty {
+                minStack.removeAll()
+                return
+            }
+            
+            if let minLastVal = minStack.last,
+                minLastVal == lastVal {
+                minStack.removeLast()
             }
         }
     }
@@ -42,4 +46,4 @@ class MinStack {
     }
 }
 
-
+ 
