@@ -12,32 +12,14 @@ import Foundation
 
  
 
-func fizzbuzz(n: Int) -> String {
-    let result = fizz(n: n) + buzz(n: n)
-    if result == "" {
-        return "\(n)"
-    }
-    return result
-}
- 
-func fizz(n: Int) -> String {
-    if n % 3 == 0 { return "fizz" }
-    return ""
-}
- 
-func buzz(n: Int)  -> String {
-    if n % 5 == 0 { return "buzz" }
-    return ""
-}
+let fizz = { i in i % 3 == 0 ? "fizz" : "" }
+let buzz = { i in i % 5 == 0 ? "buzz" : "" }
 
+let fizzbuzz: (Int) -> String = {  i in { a, b in b.isEmpty ? a : b}("\(i)", fizz(i) + buzz(i)) }
+
+ 
 func loop(min: Int, max: Int, _ f: (Int)->Void) {
-    for i in min...max {
-        f(i)
-    }
-}
-
-func f(_ i: Int) {
-    print(fizzbuzz(n: i))
+    Array(min...max).forEach(f)
 }
  
-loop(min: 0, max: 100, f)
+loop(min: 0, max: 100, { print(fizzbuzz($0)) })
