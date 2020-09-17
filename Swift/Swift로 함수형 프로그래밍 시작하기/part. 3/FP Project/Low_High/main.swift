@@ -1,7 +1,7 @@
 import Foundation
  
 
-let answer = Int(arc4random() % 100) + 1
+//let answer = Int(arc4random() % 100) + 1
 
 enum Result: String {
     case wrong = "Wrong"
@@ -10,11 +10,15 @@ enum Result: String {
     case low = "Low"
 }
 
-func inputAndCheck() -> Bool {
-    return printResult(evaluateInput())
+func generateAnswer(_ min: Int, _ max: Int) -> Int {
+    return Int(arc4random()) % (max - min) + 1
 }
 
-func evaluateInput() -> Result {
+func inputAndCheck(_ answer: Int) -> () -> Bool {
+    return { printResult(evaluateInput(answer)) }
+}
+
+func evaluateInput(_ answer: Int) -> Result {
     guard let userInput = Int(readLine() ?? "") else { return .wrong }
  
     if userInput > answer { return .high }
@@ -45,5 +49,5 @@ func countingLoop(_ needCouning: @escaping ()->Bool, _ finished: (Int)->Void) {
 
  
 
-countingLoop(inputAndCheck, corrected)
+countingLoop(inputAndCheck(generateAnswer(1, 100)), corrected)
  
