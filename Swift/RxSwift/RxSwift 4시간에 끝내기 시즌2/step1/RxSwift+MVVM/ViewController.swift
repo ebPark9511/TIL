@@ -46,29 +46,58 @@ class ViewController: UIViewController {
         })
     }
 
-//    func downloadJson(_ url: String,
-//                      _ completion: @escaping(String?) -> Void) {
-    // completion으로 일일히 처리해주긴 귀찮아서 리턴값으로 처리하기 귀한 방안이 만들어졌다.
+ 
+    // Observable의 생명주기
+    // 1. Create
+    // 2. Subscribe
+    // 3. onNext
+    // ---- 끝 ----
+    // 4. onCompleted  / onError
+    // 5. Disposed
     
+    // Observable.create 이 후 실행은
+    // subscribe에서 이루어진다.
+    // 끝나면 Disposed 된다. (completed 된 subscribe는 재사용이 불가능하다.)
     
     //RXSwift는 비동기적으로 데이터를 가져올때 클로져로 처리하지 않고
     // 리턴하여서 처리한다.
         func downloadJson(_ url: String) -> Observable<String?> {
             
-            return Observable.create { f in
-                DispatchQueue.global().async {
-                    let url = URL(string: MEMBER_LIST_URL)!
-                    let data = try! Data(contentsOf: url)
-                    let json = String(data: data, encoding: .utf8)
+            //1. 비동기로 생기는 데이터를 Observable로 감싸서 리턴하는 방법.
+            
+            // public static func create(_ subscribe: @escaping (RxSwift.AnyObserver<Self.Element>) -> RxSwift.Disposable) -> RxSwift.Observable<Self.Element>
+            return Observable.create { emitter in
+                let url = URL(string: MEMBER_LIST_URL)!
+               let task = URLSession.shared.dataTask(with: url) {  (data, _, err) in //
+                if let err = err { emitter.onError(err) }
                     
-                    DispatchQueue.main.async {
-                        f.onNext(json)
-//                        f.onCompleted()
+                    if let data = data,
+                       let json = String(data: data, encoding: .utf8) {
+                        emitter.onNext(json)
                     }
-                }
+                emitter.onCompleted()
+                    
+               }
+               
+                task.resume()
+                
                 
                 return Disposables.create()
             }
+            
+//            return Observable.create { f in
+//                DispatchQueue.global().async {
+//                    let url = URL(string: MEMBER_LIST_URL)!
+//                    let data = try! Data(contentsOf: url)
+//                    let json = String(data: data, encoding: .utf8)
+//
+//                    DispatchQueue.main.async {
+//                        f.onNext(json)
+//                    }
+//                }
+//
+//                return Disposables.create()
+//            }
     }
     
     // MARK: SYNC
@@ -78,14 +107,18 @@ class ViewController: UIViewController {
     @IBAction func onLoad() {
         editView.text = ""
         setVisibleWithAnimation(activityIndicator, true)
-         
-        let disposable = downloadJson(MEMBER_LIST_URL)
-//        subscribe는 Disposable를 리턴한다.
+        
+        //2. Observable로 오는 데이터를 받아서 처리하는 방법.
+        _ = downloadJson(MEMBER_LIST_URL)
+            // public func subscribe(_ on: @escaping (RxSwift.Event<Self.Element>) -> Void) -> RxSwift.Disposable
+            .debug()
             .subscribe({ (event) in
                 switch event {
                 case let .next(json):
-                    self.editView.text = json
-                    self.setVisibleWithAnimation(self.activityIndicator, false)
+                    DispatchQueue.main.async {
+                        self.editView.text = json
+                        self.setVisibleWithAnimation(self.activityIndicator, false)
+                    }
                 case .completed:
                     // 클로저 종료
                     break
@@ -96,7 +129,7 @@ class ViewController: UIViewController {
             })
         
         
-        // dispose : 버리다.
+//        dispose : 버리다.
 //        disposable.dispose() // 동작을 취소 시킬수 있다.
     }
 }
