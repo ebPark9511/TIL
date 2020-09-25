@@ -239,13 +239,13 @@
 			path = image;
 			sourceTree = "<group>";
 		};
-		0A9037AD2507A038004CB271 /* 200908_Concurrency Programing */ = {
+		0A9037AD2507A038004CB271 /* Concurrency Programing */ = {
 			isa = PBXGroup;
 			children = (
 				0A9037AE2507A038004CB271 /* main.swift */,
 				0A9037B32507A052004CB271 /* README.md */,
 			);
-			path = "200908_Concurrency Programing";
+			path = "Concurrency Programing";
 			sourceTree = "<group>";
 		};
 		0A9AB40924D40E8A001A0FE0 = {
@@ -255,7 +255,7 @@
 				0A9AB42E24D40E9D001A0FE0 /* 200731_AppClip */,
 				0A8754CF24F8D46B0072E955 /* 200828_dSYM */,
 				0A72F0962506428500E10781 /* 200907_method swizzling */,
-				0A9037AD2507A038004CB271 /* 200908_Concurrency Programing */,
+				0A9037AD2507A038004CB271 /* Concurrency Programing */,
 				0A062307250CE89000F29E2B /* Memory management */,
 				0A9AB41324D40E8A001A0FE0 /* Products */,
 			);

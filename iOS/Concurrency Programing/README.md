@@ -127,3 +127,39 @@ _작업은 분, 시간과 같이 상당한 시간이 든다._
 
 [Dispatch Queue 테스트](https://github.com/ebPark9511/TIL/blob/master/iOS/200908_Concurrency%20Programing/main.swift) 
  
+
+
+### 2) Operation Queue
+-  Objtive-C 기반, 비동기적인 작업을 캡슐화하는 객체 지향적인 방법
+    
+- 추가된 Operation 객체의 우선순위, 준비 상태에 따라 Operation Queue 대기열에 있는 객체를 처리한다.
+    
+- 작업이 추가 된 후에는 작업을 직접 제거하는 것이 불가능하다. (취소, 완료시에만 대기열에서 제거 된다.)
+
+
+
+#### 2-1) Operation
+- 추상 클래스, 서브클래싱 하여 사용해야함. 이 클래스는 자체 서브 클래스에서 수행해야하는 작업의 양을 최소화 하기 위해 상당한 양의 인프라를 제공함.
+
+- 이 외에 Foundation framework에서 그대로 사용 가능한 구체적인 하위 클래스도 제공한다.
+<br><br>
+
+
+
+  #### ① NSInvocationOperation : 이미 task를 수행할 function이 정의 되어 있다면 selector방식으로 해당 function을 넘겨 Operation을 생성한다.
+
+<br>
+
+
+  #### ② NSBlockOperation : 현재 하나 이상의 블록 객체를 동시에 수행한다. 전달된 모든 block의 수행이 완료되어야 해당 Operation이 완료된 것으로 간주한다.
+  
+  
+  (이어서 계속...)
+  
+
+
+
+https://aroundck.tistory.com/4606
+https://developer.apple.com/library/archive/documentation/General/Conceptual/ConcurrencyProgrammingGuide/OperationObjects/NaN
+https://zeddios.tistory.com/510
+
