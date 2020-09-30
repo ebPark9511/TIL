@@ -20,7 +20,7 @@
 
 ## iOS 환경의 동시성 프로그래밍
 
-iOS 환경에서 동시성 프로그래밍을 지원하는 종류는 2가지가 있다.
+iOS 환경에서 동시성 프로그래밍을 지원하는 종류는 3가지가 있다.
 
 
 - GCD (Grand Central Dispatch) : 멀티 코어와 멀티 프로세싱 환경에서 최적화 된 프로그래밍을 할 수 있도록 애플이 개발한 기술.
@@ -152,14 +152,37 @@ _작업은 분, 시간과 같이 상당한 시간이 든다._
 
 
   #### ② NSBlockOperation : 현재 하나 이상의 블록 객체를 동시에 수행한다. 전달된 모든 block의 수행이 완료되어야 해당 Operation이 완료된 것으로 간주한다.
-  
-  
-  (이어서 계속...)
-  
+  <br>
+  <br>
+
+
+모든 Operation 객체는 다음 기능을 지원함. <br><br>
+
+- operation 객체간의 그래프 기반 종속성 설장 지원 이러한 종속성은 종속된 모든 operation이 완료되기 전까지 지정된 operation을 실행 되지 않게 함.
+- 작업의 완료 후 실행 되는 블록 지원
+- KVO로 값을 모니터링
+- 작업 우선순위 지정 가능
+- 작업 처리 중 cancel 체계 지원<br><br>
+
+앱의 main 스레드에서 코드를 실행하는 대신
+
+하나 이상의 operation 객체를 큐에 제출하고 하나 이상의 개별 스레드에서 작업을 비 동기적으로 처리 가능.<br><br>
+
+### **Concurrent Versus Non-concurrent Operations**
+ NSOperation의 isConcurrent(=isAsynchronous) 메서드는 start 메서드가 호출된 스레드와 관련하여 operation이 동기/비동기인지
+실행 여부를 알려준다.(디폴트 값은 동기실행으로 false 리턴)<br><br>
+
+개발자가 Concurrent Operation 객체를 직접 구현할 필요는 없음.
+non concurrent Operation 객체를 Operation Queue에 제출시에도 해당 Operation을 실행할 스레드가 큐 자체에서 생성되어 비동기로 처리가 됨.<br><br>
+(Operation Queue도 내부적으론 GCD를 이용하다보니 
+GCD에서 제공하는 큐인 Concurrent Queue에 객체가 추가되어 non concurrent 여도 concurrent로 수행된다는 이야기인듯.)
+
+operation을 직접 정의시에는 Operation Queue에 추가하지 않고.
+비동기적으로 실행하는 경우에 필요함.
 
 
 
 https://aroundck.tistory.com/4606
-https://developer.apple.com/library/archive/documentation/General/Conceptual/ConcurrencyProgrammingGuide/OperationObjects/NaN
+https://developer.apple.com/library/archive/documentation/General/Conceptual/ConcurrencyProgrammingGuide
 https://zeddios.tistory.com/510
 

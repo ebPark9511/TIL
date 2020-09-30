@@ -7,12 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A07F7D2252429FA00E05277 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A07F7D1252429FA00E05277 /* main.swift */; };
 		0A23C205251246C500B2FBAF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A23C204251246C500B2FBAF /* main.swift */; };
 		0AB51650250A3DE9003AEE5D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5164F250A3DE9003AEE5D /* main.swift */; };
 		0AB5165F250A3EAF003AEE5D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5165E250A3EAF003AEE5D /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0A07F7CD252429FA00E05277 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		0A23C200251246C500B2FBAF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -43,6 +53,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A07F7CF252429FA00E05277 /* Weather Forecast */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Weather Forecast"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A07F7D1252429FA00E05277 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0A23C202251246C500B2FBAF /* Low_High */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Low_High; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A23C204251246C500B2FBAF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0AB5164C250A3DE9003AEE5D /* FP Project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "FP Project"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +64,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0A07F7CC252429FA00E05277 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0A23C1FF251246C500B2FBAF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -76,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A07F7D0252429FA00E05277 /* Weather Forecast */ = {
+			isa = PBXGroup;
+			children = (
+				0A07F7D1252429FA00E05277 /* main.swift */,
+			);
+			path = "Weather Forecast";
+			sourceTree = "<group>";
+		};
 		0A23C203251246C500B2FBAF /* Low_High */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +117,7 @@
 				0AB5164E250A3DE9003AEE5D /* FP Project */,
 				0AB5165D250A3EAF003AEE5D /* FizzBuzz */,
 				0A23C203251246C500B2FBAF /* Low_High */,
+				0A07F7D0252429FA00E05277 /* Weather Forecast */,
 				0AB5164D250A3DE9003AEE5D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -100,6 +128,7 @@
 				0AB5164C250A3DE9003AEE5D /* FP Project */,
 				0AB5165C250A3EAF003AEE5D /* FizzBuzz */,
 				0A23C202251246C500B2FBAF /* Low_High */,
+				0A07F7CF252429FA00E05277 /* Weather Forecast */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,6 +152,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0A07F7CE252429FA00E05277 /* Weather Forecast */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A07F7D5252429FA00E05277 /* Build configuration list for PBXNativeTarget "Weather Forecast" */;
+			buildPhases = (
+				0A07F7CB252429FA00E05277 /* Sources */,
+				0A07F7CC252429FA00E05277 /* Frameworks */,
+				0A07F7CD252429FA00E05277 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Weather Forecast";
+			productName = "Weather Forecast";
+			productReference = 0A07F7CF252429FA00E05277 /* Weather Forecast */;
+			productType = "com.apple.product-type.tool";
+		};
 		0A23C201251246C500B2FBAF /* Low_High */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A23C208251246C500B2FBAF /* Build configuration list for PBXNativeTarget "Low_High" */;
@@ -180,10 +226,13 @@
 		0AB51644250A3DE9003AEE5D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "박은비";
 				TargetAttributes = {
+					0A07F7CE252429FA00E05277 = {
+						CreatedOnToolsVersion = 11.5;
+					};
 					0A23C201251246C500B2FBAF = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -211,11 +260,20 @@
 				0AB5164B250A3DE9003AEE5D /* FP Project */,
 				0AB5165B250A3EAF003AEE5D /* FizzBuzz */,
 				0A23C201251246C500B2FBAF /* Low_High */,
+				0A07F7CE252429FA00E05277 /* Weather Forecast */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0A07F7CB252429FA00E05277 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A07F7D2252429FA00E05277 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0A23C1FE251246C500B2FBAF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -243,6 +301,28 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		0A07F7D3252429FA00E05277 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HC2Z7MJWST;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		0A07F7D4252429FA00E05277 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HC2Z7MJWST;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		0A23C206251246C500B2FBAF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -427,6 +507,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0A07F7D5252429FA00E05277 /* Build configuration list for PBXNativeTarget "Weather Forecast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A07F7D3252429FA00E05277 /* Debug */,
+				0A07F7D4252429FA00E05277 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0A23C208251246C500B2FBAF /* Build configuration list for PBXNativeTarget "Low_High" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
