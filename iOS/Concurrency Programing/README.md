@@ -127,14 +127,15 @@ _작업은 분, 시간과 같이 상당한 시간이 든다._
 
 [Dispatch Queue 테스트](https://github.com/ebPark9511/TIL/blob/master/iOS/200908_Concurrency%20Programing/main.swift) 
  
+<br><br><br><br>
 
-
+---
 ### 2) Operation Queue
 -  Objtive-C 기반, 비동기적인 작업을 캡슐화하는 객체 지향적인 방법
     
 - 추가된 Operation 객체의 우선순위, 준비 상태에 따라 Operation Queue 대기열에 있는 객체를 처리한다.
     
-- 작업이 추가 된 후에는 작업을 직접 제거하는 것이 불가능하다. (취소, 완료시에만 대기열에서 제거 된다.)
+- 작업이 추가 된 후에는 작업을 직접 제거하는 것이 불가능하다. (취소, 완료시에만 대기열에서 제거 된다.)<br><br>
 
 
 
@@ -146,23 +147,19 @@ _작업은 분, 시간과 같이 상당한 시간이 든다._
 
 
 
-  #### ① NSInvocationOperation : 이미 task를 수행할 function이 정의 되어 있다면 selector방식으로 해당 function을 넘겨 Operation을 생성한다.
-
-<br>
-
-
-  #### ② NSBlockOperation : 현재 하나 이상의 블록 객체를 동시에 수행한다. 전달된 모든 block의 수행이 완료되어야 해당 Operation이 완료된 것으로 간주한다.
+#### ① NSInvocationOperation : 이미 task를 수행할 function이 정의 되어 있다면 selector방식으로 해당 function을 넘겨 Operation을 생성한다. (selector를 swift에서 미지원하므로. Obj-C에서만 가능.)
+#### ② NSBlockOperation : 현재 하나 이상의 블록 객체를 동시에 수행한다. 전달된 모든 block의 수행이 완료되어야 해당 Operation이 완료된 것으로 간주한다.
   <br>
   <br>
 
 
-모든 Operation 객체는 다음 기능을 지원함. <br><br>
+모든 Operation 객체는 다음 기능을 지원함. <br>
 
 - operation 객체간의 그래프 기반 종속성 설장 지원 이러한 종속성은 종속된 모든 operation이 완료되기 전까지 지정된 operation을 실행 되지 않게 함.
 - 작업의 완료 후 실행 되는 블록 지원
 - KVO로 값을 모니터링
 - 작업 우선순위 지정 가능
-- 작업 처리 중 cancel 체계 지원<br><br>
+- 작업 처리 중 cancel 체계 지원<br>
 
 앱의 main 스레드에서 코드를 실행하는 대신
 
@@ -178,9 +175,69 @@ non concurrent Operation 객체를 Operation Queue에 제출시에도 해당 Ope
 GCD에서 제공하는 큐인 Concurrent Queue에 객체가 추가되어 non concurrent 여도 concurrent로 수행된다는 이야기인듯.)
 
 operation을 직접 정의시에는 Operation Queue에 추가하지 않고.
-비동기적으로 실행하는 경우에 필요함.
+비동기적으로 실행하는 경우에 필요함.<br>
 
 
+
+
+### **BlockOperation**
+하나 이상의 블록의 동시 실행을 관리하는 Operation의 하위 클래스임.
+각 블록에 대해 별도의 Operation 객체를 만들 필용 없이.
+여러 블록을 한번에 실행 가능함.
+둘 이상의 블록을 실행할 때는 모든 블록이 실행을 마쳤을때만 작업 자체가 완료된것으로 간주 된다.
+
+```swift 
+ 
+let block1 = BlockOperation.init {
+    for i in 1...3 {
+        print("blockOperation1 test \(i)")
+        sleep(1)
+    }
+}
+
+
+let block2 = BlockOperation.init {
+    for i in 1...3 {
+        print("blockOperation2 test \(i)")
+        sleep(1)
+    }
+}
+
+ 
+//blockOperation1.start()
+//blockOperation2.start()
+
+block2.addExecutionBlock { // 블록의 추가
+    print("추가했음!222")
+}
+
+
+// GCD의 DispatchQueue로 제출되어 비동기로 처리
+let queue = OperationQueue()
+queue.addOperations([block1, block2], waitUntilFinished:true)
+
+// 위 block1, block2 작업이 모두 수행 되어야지만 하기 "완료!" 가 추가됨.
+print("완료!")
+
+
+//excuted result
+//blockOperation1 test 1
+//blockOperation2 test 1
+//blockOperation2 test 2
+//blockOperation1 test 2
+//blockOperation2 test 3
+//blockOperation1 test 3
+//완료!
+ 
+``` 
+
+ 
+
+
+
+
+
+ 
 
 https://aroundck.tistory.com/4606
 https://developer.apple.com/library/archive/documentation/General/Conceptual/ConcurrencyProgrammingGuide
