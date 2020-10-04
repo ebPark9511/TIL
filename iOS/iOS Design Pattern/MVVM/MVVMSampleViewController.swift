@@ -8,6 +8,7 @@
 import UIKit
 
 class MVVMSampleViewController: UIViewController {
+    weak var coordinator: MainCoordinator?
     // viewModel에서 값 업데이트시. 데이터 바인딩으로 view를 업데이트 해주어야 한다 이를 Dynamic 클래스가 제공.
     // 
     var viewModel: MVVMSampleViewModel?

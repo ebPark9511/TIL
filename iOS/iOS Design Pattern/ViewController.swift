@@ -7,11 +7,14 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class ViewController: UITableViewController, Storyboarded {
+    var coordinator: MainCoordinator?
+    
     let mvvmSampleViewController = MVVMSampleViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -23,10 +26,11 @@ extension ViewController {
         
         switch indexPath.row {
         case 0:
-            mvvmSampleViewController.viewModel = MVVMSampleViewModel()
-            self.navigationController?.pushViewController(mvvmSampleViewController, animated: true)
-            
-             
+            coordinator?.mvvmSubscription()
+        case 1:
+            coordinator?.buySubscription()
+        case 2:
+            coordinator?.createAccount()
             
         default:
             return
@@ -42,6 +46,10 @@ extension ViewController {
         switch indexPath.row {
         case 0:
             cell.textLabel?.text = "MVVM"
+        case 1:
+            cell.textLabel?.text = "Coordinator Pattern - Buy"
+        case 2:
+            cell.textLabel?.text = "Coordinator Pattern - Create Account"
         default:
             cell.textLabel?.text = ""
         }
@@ -50,6 +58,6 @@ extension ViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 3
     }
 }
