@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0A9AB41124D40E8A001A0FE0"
-               BuildableName = "iOS.app"
-               BlueprintName = "iOS"
+               BuildableName = "200731_AppClip_Sample.app"
+               BlueprintName = "200731_AppClip_Sample"
                ReferencedContainer = "container:iOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0A9AB41124D40E8A001A0FE0"
-            BuildableName = "iOS.app"
-            BlueprintName = "iOS"
+            BuildableName = "200731_AppClip_Sample.app"
+            BlueprintName = "200731_AppClip_Sample"
             ReferencedContainer = "container:iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0A9AB41124D40E8A001A0FE0"
-            BuildableName = "iOS.app"
-            BlueprintName = "iOS"
+            BuildableName = "200731_AppClip_Sample.app"
+            BlueprintName = "200731_AppClip_Sample"
             ReferencedContainer = "container:iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

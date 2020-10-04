@@ -130,7 +130,7 @@
 		0A9037AC2507A038004CB271 /* 200908_ConCurrency Programing */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "200908_ConCurrency Programing"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A9037AE2507A038004CB271 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0A9037B32507A052004CB271 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		0A9AB41224D40E8A001A0FE0 /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A9AB41224D40E8A001A0FE0 /* 200731_AppClip_Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 200731_AppClip_Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A9AB41524D40E8A001A0FE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A9AB41724D40E8A001A0FE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0A9AB41924D40E8A001A0FE0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -326,7 +326,7 @@
 		0A9AB40924D40E8A001A0FE0 = {
 			isa = PBXGroup;
 			children = (
-				0A9AB41424D40E8A001A0FE0 /* iOS */,
+				0A9AB41424D40E8A001A0FE0 /* 200731_AppClip_Sample */,
 				0A9AB42E24D40E9D001A0FE0 /* 200731_AppClip */,
 				0A8754CF24F8D46B0072E955 /* 200828_dSYM */,
 				0A72F0962506428500E10781 /* 200907_method swizzling */,
@@ -340,7 +340,7 @@
 		0A9AB41324D40E8A001A0FE0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0A9AB41224D40E8A001A0FE0 /* iOS.app */,
+				0A9AB41224D40E8A001A0FE0 /* 200731_AppClip_Sample.app */,
 				0A9AB42D24D40E9D001A0FE0 /* 200731_AppClip.app */,
 				0A72F0952506428500E10781 /* 200907_method swizzling */,
 				0A9037AC2507A038004CB271 /* 200908_ConCurrency Programing */,
@@ -350,9 +350,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0A9AB41424D40E8A001A0FE0 /* iOS */ = {
+		0A9AB41424D40E8A001A0FE0 /* 200731_AppClip_Sample */ = {
 			isa = PBXGroup;
 			children = (
+				0A8A349124D4231700F34A82 /* image */,
+				0A8A348F24D4222900F34A82 /* README.md */,
 				1D5EEBD924D5DA7E00CFBD21 /* iOS.entitlements */,
 				0A9AB41524D40E8A001A0FE0 /* AppDelegate.swift */,
 				0A9AB41724D40E8A001A0FE0 /* SceneDelegate.swift */,
@@ -363,7 +365,7 @@
 				0A9AB41D24D40E8B001A0FE0 /* Preview Content */,
 				1D5EEBE124D6782400CFBD21 /* Product.swift */,
 			);
-			path = iOS;
+			path = 200731_AppClip_Sample;
 			sourceTree = "<group>";
 		};
 		0A9AB41D24D40E8B001A0FE0 /* Preview Content */ = {
@@ -377,8 +379,6 @@
 		0A9AB42E24D40E9D001A0FE0 /* 200731_AppClip */ = {
 			isa = PBXGroup;
 			children = (
-				0A8A349124D4231700F34A82 /* image */,
-				0A8A348F24D4222900F34A82 /* README.md */,
 				0A9AB43D24D40E9E001A0FE0 /* Info.plist */,
 				0A9AB43E24D40E9E001A0FE0 /* _00731_AppClip.entitlements */,
 			);
@@ -484,9 +484,9 @@
 			productReference = 0A9037AC2507A038004CB271 /* 200908_ConCurrency Programing */;
 			productType = "com.apple.product-type.tool";
 		};
-		0A9AB41124D40E8A001A0FE0 /* iOS */ = {
+		0A9AB41124D40E8A001A0FE0 /* 200731_AppClip_Sample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0A9AB42624D40E8B001A0FE0 /* Build configuration list for PBXNativeTarget "iOS" */;
+			buildConfigurationList = 0A9AB42624D40E8B001A0FE0 /* Build configuration list for PBXNativeTarget "200731_AppClip_Sample" */;
 			buildPhases = (
 				0A9AB40E24D40E8A001A0FE0 /* Sources */,
 				0A9AB40F24D40E8A001A0FE0 /* Frameworks */,
@@ -499,9 +499,9 @@
 			dependencies = (
 				0A9AB44024D40E9E001A0FE0 /* PBXTargetDependency */,
 			);
-			name = iOS;
+			name = 200731_AppClip_Sample;
 			productName = iOS;
-			productReference = 0A9AB41224D40E8A001A0FE0 /* iOS.app */;
+			productReference = 0A9AB41224D40E8A001A0FE0 /* 200731_AppClip_Sample.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0A9AB42C24D40E9D001A0FE0 /* 200731_AppClip */ = {
@@ -563,7 +563,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0A9AB41124D40E8A001A0FE0 /* iOS */,
+				0A9AB41124D40E8A001A0FE0 /* 200731_AppClip_Sample */,
 				0A9AB42C24D40E9D001A0FE0 /* 200731_AppClip */,
 				0A72F0942506428500E10781 /* 200907_method swizzling */,
 				0A9037AB2507A038004CB271 /* 200908_ConCurrency Programing */,
@@ -981,10 +981,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"iOS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"200731_AppClip_Sample/Preview Content\"";
 				DEVELOPMENT_TEAM = 569MXZ6TKC;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_FILE = 200731_AppClip_Sample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1005,10 +1005,10 @@
 				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"iOS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"200731_AppClip_Sample/Preview Content\"";
 				DEVELOPMENT_TEAM = 569MXZ6TKC;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_FILE = 200731_AppClip_Sample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1119,7 +1119,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0A9AB42624D40E8B001A0FE0 /* Build configuration list for PBXNativeTarget "iOS" */ = {
+		0A9AB42624D40E8B001A0FE0 /* Build configuration list for PBXNativeTarget "200731_AppClip_Sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0A9AB42724D40E8B001A0FE0 /* Debug */,
