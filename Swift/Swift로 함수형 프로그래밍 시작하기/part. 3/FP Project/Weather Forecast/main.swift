@@ -34,48 +34,67 @@ struct Weather: Codable {
     let predictability: Float
 }
 
-let query = "seoul"
-let locQueryUrl = URL(string: "https://www.metaweather.com/api/location/search?query=\(query)")!
+ 
+func getData(_ url: URL) -> Data? {
+    return try? Data(contentsOf: url)
+}
+ 
 
-// URL로 REST API 요청
-if let locData = try? Data(contentsOf: locQueryUrl) {
+func getWeather(woeid: Int) -> WeatherInfo? {
+    guard let url = URL(string: "https://www.metaweather.com/api/location/\(woeid)") else { return nil }
     
-    // JSON 디코딩
-    if let locations = try? JSONDecoder().decode([Location].self, from: locData) {
+    guard let weatherData =  getData(url),
+          let weatherInfo = try? JSONDecoder().decode(WeatherInfo.self, from: weatherData) else { return nil }
+    
+    return weatherInfo
+}
 
-        for location in locations {
+func makeWeatherString(state: String,
+                       weather: Weather) -> String {
+    return String(format: "%@: %@ %2.2f°C ~ %2.2f°C",
+                  weather.applicable_date,
+                  state,
+                  weather.max_temp,
+                  weather.min_temp)
+}
+
+func getLocation(query: String,
+                 closure: @escaping ([Location]) -> Void) {
+    guard let url = URL(string: "https://www.metaweather.com/api/location/search?query=\(query)") else { return }
+    
+    guard let locData =  getData(url),
+          let locations =  try? JSONDecoder().decode([Location].self, from: locData) else { return }
+    
+    
+    closure(locations)
+
+}
+ 
+func weather(place: String) {
+    getLocation(query: place) { (locations) in
+        
+        func chk(_ location: Location) {
             print("[\(location.title)]")
-
-            let woeid = location.woeid
-            let weatherUrl = URL(string: "https://www.metaweather.com/api/location/\(woeid)")!
-            // 위치를 받아와 좌표를 계산하여 URL를. 만듬
-            
-            
-            // URL로 REST API 요청
-            if let weatherData = try? Data(contentsOf: weatherUrl) {
-                
-                // JSON 디코딩
-                if let weatherInfo = try? JSONDecoder().decode(WeatherInfo.self, from: weatherData) {
-
-                    let weathers = weatherInfo.consolidated_weather
-                    for weather in weathers {
-                        // 데이터 핸들링
-                        let state = weather.weather_state_name.padding(toLength: 15,
-                                                                       withPad: " ",
-                                                                       startingAt: 0)
-                        
-                        
-                        let forecast = String(format: "%@: %@ %2.2f°C ~ %2.2f°C",
-                                              weather.applicable_date,
-                                              state,
-                                              weather.max_temp,
-                                              weather.min_temp)
-                        print(forecast)
-                    }
+              
+            if let weatherInfo = getWeather(woeid: location.woeid) {
+                let weathers = weatherInfo.consolidated_weather
+                for weather in weathers {
+                    // 데이터 핸들링
+                    let state = weather.weather_state_name.padding(toLength: 15,
+                                                                   withPad: " ",
+                                                                   startingAt: 0)
+                      
+                    print( makeWeatherString(state: state,
+                                             weather: weather))
                 }
             }
-
+            
             print("")
         }
+        
+        locations.forEach(chk)
+        
     }
 }
+
+weather(place: "seoul")
