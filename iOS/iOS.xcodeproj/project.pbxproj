@@ -229,6 +229,7 @@
 		0AE75B792546BB470013D44A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AE75B7B2546BB470013D44A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AE75B7C2546BB470013D44A /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		0AFA5A46254944BC0070534A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1D5EEBD924D5DA7E00CFBD21 /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS.entitlements; sourceTree = "<group>"; };
 		1D5EEBE124D6782400CFBD21 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		1D713E0424D68AF10038D3E1 /* configure_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = configure_1.png; sourceTree = "<group>"; };
@@ -524,6 +525,7 @@
 				0AE75AC12546BA1F0013D44A /* Assets.xcassets */,
 				0AE75AC32546BA1F0013D44A /* LaunchScreen.storyboard */,
 				0AE75AC62546BA1F0013D44A /* Info.plist */,
+				0AFA5A46254944BC0070534A /* README.md */,
 			);
 			path = "Watch Test Project";
 			sourceTree = "<group>";
