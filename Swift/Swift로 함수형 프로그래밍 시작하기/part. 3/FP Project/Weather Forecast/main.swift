@@ -34,67 +34,62 @@ struct Weather: Codable {
     let predictability: Float
 }
 
- 
-func getData(_ url: URL) -> Data? {
-    return try? Data(contentsOf: url)
+// 비동기로 Data가 있을때만 값을 가져올 수 있게 수정.
+func getData(_ url: URL,_ completed: (Data) -> () ){
+    if let data = try? Data(contentsOf: url) {
+        completed(data)
+    }
 }
  
-
-func getWeather(woeid: Int) -> WeatherInfo? {
-    guard let url = URL(string: "https://www.metaweather.com/api/location/\(woeid)") else { return nil }
-    
-    guard let weatherData =  getData(url),
-          let weatherInfo = try? JSONDecoder().decode(WeatherInfo.self, from: weatherData) else { return nil }
-    
-    return weatherInfo
-}
-
-func makeWeatherString(state: String,
-                       weather: Weather) -> String {
-    return String(format: "%@: %@ %2.2f°C ~ %2.2f°C",
-                  weather.applicable_date,
-                  state,
-                  weather.max_temp,
-                  weather.min_temp)
-}
-
+// 지역 검색 -> [Location]
 func getLocation(query: String,
-                 closure: @escaping ([Location]) -> Void) {
+                 complted: @escaping ([Location]) -> Void) {
     guard let url = URL(string: "https://www.metaweather.com/api/location/search?query=\(query)") else { return }
     
-    guard let locData =  getData(url),
-          let locations =  try? JSONDecoder().decode([Location].self, from: locData) else { return }
-    
-    
-    closure(locations)
-
-}
- 
-func weather(place: String) {
-    getLocation(query: place) { (locations) in
-        
-        func chk(_ location: Location) {
-            print("[\(location.title)]")
-              
-            if let weatherInfo = getWeather(woeid: location.woeid) {
-                let weathers = weatherInfo.consolidated_weather
-                for weather in weathers {
-                    // 데이터 핸들링
-                    let state = weather.weather_state_name.padding(toLength: 15,
-                                                                   withPad: " ",
-                                                                   startingAt: 0)
-                      
-                    print( makeWeatherString(state: state,
-                                             weather: weather))
-                }
-            }
-            
-            print("")
+    // 스위프트 문법 상 마지막 클로저는 밖으로 꺼낼수 있다.
+    getData(url) { (data) in
+        if let location = try? JSONDecoder().decode([Location].self, from: data) {
+            complted(location)
         }
-        
-        locations.forEach(chk)
-        
     }
 }
 
-weather(place: "seoul")
+// 날씨 정보: Location-> woeid -> [Weather]
+func getWeathers(woeid: Int,
+                complted: @escaping ([Weather]) -> Void ){
+    guard let url = URL(string: "https://www.metaweather.com/api/location/\(woeid)") else { return  }
+    
+    getData(url) { (data) in
+        if let location = try? JSONDecoder().decode(WeatherInfo.self, from: data) {
+            complted(location.consolidated_weather)
+        }
+    }
+}
+
+func printWeather(_ weather: Weather) {
+    let state = weather.weather_state_name.padding(toLength: 15,
+                                                   withPad: " ",
+                                                   startingAt: 0)
+    
+    let forecast = String(format: "%@: %@ %2.2f°C ~ %2.2f°C",
+                          weather.applicable_date,
+                          state,
+                          weather.max_temp,
+                          weather.min_temp)
+    
+    print(forecast)
+}
+
+ 
+
+ 
+getLocation(query: "seoul") { (locations) in
+    locations.forEach { (location) in
+        getWeathers(woeid: location.woeid) { (weathers) in
+            print("\(location.title)")
+            weathers.forEach { (weather) in
+                print(weather)
+            }
+        }
+    }
+}
