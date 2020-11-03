@@ -35,9 +35,11 @@ struct Weather: Codable {
 }
 
 // 비동기로 Data가 있을때만 값을 가져올 수 있게 수정.
-func getData(_ url: URL,_ completed: (Data) -> () ){
-    if let data = try? Data(contentsOf: url) {
-        completed(data)
+func getData(_ url: URL,_ completed: @escaping (Data) -> () ){
+    DispatchQueue.global().async { // 컨커런시큐로 네트워킹을 동시 수행
+        if let data = try? Data(contentsOf: url) {
+            completed(data)
+        }
     }
 }
  
@@ -71,6 +73,7 @@ func printWeather(_ weather: Weather) {
                                                    withPad: " ",
                                                    startingAt: 0)
     
+    
     let forecast = String(format: "%@: %@ %2.2f°C ~ %2.2f°C",
                           weather.applicable_date,
                           state,
@@ -82,9 +85,8 @@ func printWeather(_ weather: Weather) {
 
  
 
- 
-getLocation(query: "seoul") { (locations) in
-    locations.forEach { (location) in
+getLocation(query: "san") { (locations) in
+    locations.forEach { (location) in // 순차적으로 가져옴
         getWeathers(woeid: location.woeid) { (weathers) in
             print("\(location.title)")
             weathers.forEach { (weather) in
@@ -93,3 +95,5 @@ getLocation(query: "seoul") { (locations) in
         }
     }
 }
+
+RunLoop.main.run()
