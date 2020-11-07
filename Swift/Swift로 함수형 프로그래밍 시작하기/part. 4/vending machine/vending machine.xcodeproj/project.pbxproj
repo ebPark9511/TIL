@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		1D36FF2C25543F2200AAF017 /* vending machine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "vending machine"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D36FF2F25543F2200AAF017 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		1D36FF372556CD6A00AAF017 /* Functional_Programming_in_swift.018.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Functional_Programming_in_swift.018.jpeg; path = ../../Functional_Programming_in_swift.018.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 		1D36FF2E25543F2200AAF017 /* vending machine */ = {
 			isa = PBXGroup;
 			children = (
+				1D36FF372556CD6A00AAF017 /* Functional_Programming_in_swift.018.jpeg */,
 				1D36FF2F25543F2200AAF017 /* main.swift */,
 			);
 			path = "vending machine";
