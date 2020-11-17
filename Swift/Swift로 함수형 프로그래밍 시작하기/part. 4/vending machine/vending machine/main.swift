@@ -20,14 +20,6 @@ import Foundation
 
 
 open class VendingMachine {
-    
-    /*
-     자판기 기능
-     1. 동전을 먹는다
-     2. 물건을 준다
-     3. 잔돈을 준다.
-   */
-      
     private enum VendingMachineError: Error {
         case wrongCoin
         case notMenu
@@ -140,13 +132,6 @@ open class VendingMachine {
 let drinkVendingMachine = VendingMachine(menu: ["cola": 1000,
                                                 "cider": 1100,
                                                 "Fanta": 1200] )
-
-/* 사용자
- 1. 코인을 넣는다.
- 2. 상품을 선택한다.
- 3. 잔돈을 받는다. */
-
-
 
 enum UserWords {
     case putCoin(coin: Int)
